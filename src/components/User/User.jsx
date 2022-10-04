@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
+
+import { Poragraph, Span } from "./User.styled";
+
 export const User = ({ user: { name, email } }) => {
+  const isOrange = email.includes("biz");
   return (
     <div>
-      <p>Name: {name}</p>
-      <p>Email: {email}</p>
+      <Poragraph>
+        Name: <Span>{name}</Span>
+      </Poragraph>
+      <Poragraph>
+        Email: <Span isOrange={isOrange}>{email}</Span>
+      </Poragraph>
     </div>
   );
 };
