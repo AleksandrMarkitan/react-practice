@@ -1,5 +1,6 @@
 export const users = [
   {
+    hadjob: false,
     id: "5b9289",
     name: "Leanne Graha",
     username: "Bret",
@@ -23,6 +24,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "b477dc",
     name: "Ervin Howell",
     username: "Antonette",
@@ -46,6 +48,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "afe2b5",
     name: "Clementine Bauch",
     username: "Samantha",
@@ -69,6 +72,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "4a95f5",
     name: "Patricia Lebsack",
     username: "Karianne",
@@ -92,6 +96,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "1a3403",
     name: "Chelsey Dietrich",
     username: "Kamren",
@@ -115,6 +120,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "f642eb",
     name: "Mrs. Dennis Schulist",
     username: "Leopoldo_Corkery",
@@ -138,6 +144,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "af95da",
     name: "Kurtis Weissnat",
     username: "Elwyn.Skiles",
@@ -161,6 +168,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "867fbf",
     name: "Nicholas Runolfsdottir V",
     username: "Maxime_Nienow",
@@ -184,6 +192,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "888a5f",
     name: "Glenna Reichert",
     username: "Delphine",
@@ -207,6 +216,7 @@ export const users = [
     },
   },
   {
+    hadjob: false,
     id: "8335b7",
     name: "Clementina DuBuque",
     username: "Moriah.Stanton",
