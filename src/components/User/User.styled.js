@@ -4,7 +4,7 @@ export const Span = styled.span`
   color: ${({ isOrange }) => (isOrange ? "orange" : "blue")};
 `;
 
-export const Poragraph = styled.p`
+export const Paragraph = styled.p`
   font-size: 18px;
   font-weight: bold;
   color: tomato;

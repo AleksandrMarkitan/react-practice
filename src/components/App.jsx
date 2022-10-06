@@ -1,13 +1,24 @@
-// import { User } from "./User/User";
-import { users } from "../data/users";
-import { UserList } from "./UserList/UserList";
-// import { Section } from "./Section/Section";
-import { Button } from "./User/Button";
+import { nanoid } from "nanoid";
+
+import PropTypes from "prop-types";
 
 import { Component } from "react";
 
+import { users } from "../data/users";
+import { UserList } from "./UserList/UserList";
+import { Button } from "./User/Button";
+import { AddUserForm } from "./Form/AddUserForm";
+
 export class App extends Component {
-  state = { users, isListShown: false };
+  state = {
+    users,
+    isListShown: false,
+  };
+
+  static propTypes = {
+    addUser: PropTypes.func.isRequired,
+  };
+
   clickHandler = () => {
     this.setState({ isListShown: true });
   };
@@ -26,16 +37,28 @@ export class App extends Component {
     }));
   };
 
+  addUser = (data) => {
+    const newUser = {
+      ...data,
+      hadjob: false,
+      id: nanoid(),
+    };
+    this.setState((prevState) => ({ users: [...prevState.users, newUser] }));
+  };
+
   render() {
     const { isListShown, users } = this.state;
     return (
       <>
         {isListShown ? (
-          <UserList
-            users={users}
-            userDelete={this.userDelete}
-            changeJobStatus={this.changeJobStatus}
-          />
+          <>
+            <AddUserForm addUser={this.addUser} />
+            <UserList
+              users={users}
+              userDelete={this.userDelete}
+              changeJobStatus={this.changeJobStatus}
+            />
+          </>
         ) : (
           <Button
             type="button"
@@ -47,16 +70,3 @@ export class App extends Component {
     );
   }
 }
-
-// export const App = () => {
-//   return (
-//     <>
-//       <Section>
-//         <User user={users[0]} />
-//       </Section>
-//       <Section title="userslist">
-//         <UserList users={users} />
-//       </Section>
-//     </>
-//   );
-// };

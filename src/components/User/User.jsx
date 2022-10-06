@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { Poragraph, Span } from "./User.styled";
+import { Paragraph, Span } from "./User.styled";
 
 export const User = ({
   user: { name, email, id, hadjob },
@@ -10,15 +10,15 @@ export const User = ({
   const isOrange = email.includes("biz");
   return (
     <>
-      <Poragraph>
+      <Paragraph>
         Name: <Span>{name}</Span>
-      </Poragraph>
-      <Poragraph>
+      </Paragraph>
+      <Paragraph>
         Email: <Span isOrange={isOrange}>{email}</Span>
-      </Poragraph>
-      <Poragraph>
+      </Paragraph>
+      <Paragraph>
         HadJob: <span>{hadjob.toString()}</span>
-      </Poragraph>
+      </Paragraph>
       <button onClick={() => userDelete(id)}>Delete</button>
       <button onClick={() => changeJobStatus(id)}>Change job status</button>
     </>
