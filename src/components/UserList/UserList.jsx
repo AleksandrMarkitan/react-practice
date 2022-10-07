@@ -1,6 +1,13 @@
 import { User } from "../User/User";
 
-export const UserList = ({ users, userDelete, changeJobStatus }) => {
+export const UserList = ({
+  users,
+  userDelete,
+  changeJobStatus,
+  showUpdateForm,
+  userToUpdate,
+  updateUser,
+}) => {
   return (
     <ul>
       {users.map((user) => {
@@ -10,6 +17,9 @@ export const UserList = ({ users, userDelete, changeJobStatus }) => {
               user={user}
               userDelete={userDelete}
               changeJobStatus={changeJobStatus}
+              showUpdateForm={showUpdateForm}
+              userToUpdate={userToUpdate}
+              updateUser={updateUser}
             />
           </li>
         );

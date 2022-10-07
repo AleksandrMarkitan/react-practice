@@ -13,6 +13,7 @@ export class App extends Component {
   state = {
     users,
     isListShown: false,
+    userToUpdate: {},
   };
 
   static propTypes = {
@@ -46,17 +47,35 @@ export class App extends Component {
     this.setState((prevState) => ({ users: [...prevState.users, newUser] }));
   };
 
+  showUpdateForm = (id) => {
+    const userToUpdate = this.state.users.find((user) => user.id === id);
+
+    this.setState({
+      userToUpdate,
+    });
+  };
+
+  updateUser = (user) => {
+    const userIndex = this.state.users.findIndex((u) => u.id === user.id);
+    const arrUsersToChange = [...this.state.users];
+    arrUsersToChange.splice(userIndex, 1, user);
+    this.setState({ users: arrUsersToChange, userToUpdate: {} });
+  };
+
   render() {
-    const { isListShown, users } = this.state;
+    const { isListShown, users, userToUpdate } = this.state;
     return (
       <>
         {isListShown ? (
           <>
             <AddUserForm addUser={this.addUser} />
             <UserList
+              userToUpdate={userToUpdate}
+              showUpdateForm={this.showUpdateForm}
               users={users}
               userDelete={this.userDelete}
               changeJobStatus={this.changeJobStatus}
+              updateUser={this.updateUser}
             />
           </>
         ) : (
